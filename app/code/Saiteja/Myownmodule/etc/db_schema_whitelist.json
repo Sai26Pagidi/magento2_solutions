@@ -1,0 +1,39 @@
+{
+    "myownmodule": {
+        "column": {
+            "id": true,
+            "title": true,
+            "content": true,
+            "created_at": true,
+            "name": true,
+            "short_description": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "thecoachsmb_article": {
+        "column": {
+            "article_id": true,
+            "name": true,
+            "content": true,
+            "created_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "saiteja_article": {
+        "column": {
+            "article_id": true,
+            "name": true,
+            "content": true,
+            "created_at": true,
+            "updated_at": true,
+            "status": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

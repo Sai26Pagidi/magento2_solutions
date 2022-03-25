@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+   <table name="myownmodule" resource="default" engine="innodb" comment="thecoachsmb_articleis the table name">
+      <column xsi:type="int" name="id" unsigned="true" nullable="false" comment="Id"/>
+      <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Title" />
+      <column xsi:type="text" name="name" nullable="false" comment="Name" />
+      <column xsi:type="varchar" name="short_description" onCreate="migrateDataFrom(content)" nullable="false" length="255" comment="Descrition" />
+      <column xsi:type="timestamp" name="created_at" comment="Created At"/>
+      <constraint xsi:type="primary" referenceId="PRIMARY">
+         <column name="id" />
+      </constraint>
+   </table>
+</schema>
