@@ -11,6 +11,8 @@
         	<block class="Magento\Framework\View\Element\Template" name="tejablock" template="Saiteja_Myownmodule::teja.phtml" />
         	<block class="Magento\Framework\View\Element\Template" name="tejblock" template="Saiteja_Myownmodule::sai/tej.phtml" />
 
+            <block class="Saiteja\Myownmodule\Block\Art" name="artblock" template="Saiteja_Myownmodule::view.phtml" />
+
         	<block class="Magento\Contact\Block\ContactForm" name="contactForm" template="Magento_Contact::form.phtml">
                 <container name="form.additional.info" label="Form Additional Info"/>
                 <arguments>

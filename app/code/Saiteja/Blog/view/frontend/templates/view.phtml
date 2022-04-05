@@ -1,0 +1,30 @@
+<h2>this is title of first row</h2>
+<?php  $articleCollection = $block->getSingleRow();?>
+<div><?php echo $articleCollection->getId(); ?></div>
+<div><?php echo $articleCollection->getTitle(); ?></div>
+<div><?php echo $articleCollection->getDescription(); ?></div>
+<div><?php echo $articleCollection->getStatus(); ?></div>
+
+<?php $ar= $block->getSaiTeja(); ?>
+<div><?php print_r($ar); ?></div>
+
+<br>
+<h2>Displaying data of another module block</h2>
+<br>
+<?php $myown = $block->Myownmodule();
+  print_r($myown);
+ ?>
+ <select>
+ 	<?php foreach($myown as $items)
+ 	{ ?>
+ 	<option><?php echo $items ?></option>
+    <?php } ?>
+ </select>
+
+ <!-- <?php //echo $block->Adding(); ?> -->
+
+<h2>Calling Block directly in phtml</h2>
+ <?php
+$blockName = $block->getLayout()->createBlock('Saiteja\Myownmodule\Block\Art');
+echo $blockName->Adding();
+?>

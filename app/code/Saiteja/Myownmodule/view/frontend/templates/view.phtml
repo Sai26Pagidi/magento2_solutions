@@ -1,0 +1,15 @@
+<?php /** @var Thecoachsmb\Mymodule\Block\Art $block */ ?>
+<?php  $articleCollection = $block->getCollection();?>
+<?php if (count($articleCollection)) { ?>
+<h2><?= $block->escapeHtml(__('My-own-module Table')) ?></h2>
+<?php foreach($block->getCollection() as $post): ?>
+<h3><?= $block->escapeHtml(__('Articlessss - ')) ?>
+<a href="<?php echo $block->getArticleUrl($post);?>"><?php echo $post->getTitle(); ?></a>
+</h3>
+
+<h4><?php echo date('F j, Y', strtotime($post->getCreatedAt())); ?></h4>
+
+<p><?php echo $post->getShortDescription(); ?></p>
+<?php endforeach; ?>
+<?php echo $block->getChildHtml('product_info_form_content'); ?>
+<?php } ?>
