@@ -1,0 +1,13 @@
+{
+    "blog": {
+        "column": {
+            "id": true,
+            "title": true,
+            "short_description": true,
+            "status": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

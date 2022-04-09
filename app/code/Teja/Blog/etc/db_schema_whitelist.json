@@ -1,0 +1,13 @@
+{
+    "teja_blog": {
+        "column": {
+            "id": true,
+            "title": true,
+            "description": true,
+            "status": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

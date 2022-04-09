@@ -14,7 +14,7 @@
         <move element="search-term-popular-link" destination="top.links" />
         <move element="top.search" destination="header-wrapper" before="-"/>
         <move element="catalog.topnav" destination="header-wrapper"/>
-        <move element="form.subscribe" destination="footer" before="-"/>
+        <move element="form.subscribe" destination="footer-container" before="-"/>
         <!--Cms page in the menu-->
          <referenceBlock name="catalog.topnav">
             <block class="Magento\Framework\View\Element\Html\Link\Current" 

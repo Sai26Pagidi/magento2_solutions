@@ -38,9 +38,7 @@ class BlogData extends Template
         parent::__construct($context, $data);
     }
 
-    /**
-     * @return Post[]
-     */
+    //fetching group of records 
     public function getCollection()
     {
         /** @var ViewCollection $viewCollection */
@@ -49,28 +47,27 @@ class BlogData extends Template
         return $blogCollection->getItems();
     }
 
-    /**
-     * For a given post, returns its url
-     * @param Post $post
-     * @return string
-     */
+    
     public function getArticleUrl($blog) {
         return $this->getUrl('blog/index/view/id/'. $blog, ['_secure' => true]);
         //return '/blog/index/index/id/' . $blog;
     }
 
+    //fetching single row data 
     public function getSingleRow(){
         $id = $this->getRequest()->getParam('id');        
         $blogFactory = $this->_blogFactory->create();
         $singleData = $blogFactory->load($id);
         return $singleData;
     }
-
+   
+   //creating own function and calling in view.phtml 
     public function getSaiTeja(){
         $arr =array("id","title","content");
         return $arr;
     }
 
+    //calling two functions from another module of block..
     public function Myownmodule(){
        $anotherBlock= $this->_art->Myownmodule();
        return $anotherBlock;
