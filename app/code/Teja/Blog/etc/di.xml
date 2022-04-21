@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+	<!-- overriding the controller of saiteja_myownmodule -->
+	<!-- <preference for="Saiteja\Myownmodule\Controller\Post\View"  
+    type="Teja\Blog\Controller\Rewrite\Index\Index" />-->
+    
+    <type name="Magento\Framework\Event\Manager">
+       <plugin name="list_all_dispatched_event" type="Teja\Blog\Plugin\ListDispatchedEvents" sortOrder="10" disabled="false"/>
+   </type>
+</config>

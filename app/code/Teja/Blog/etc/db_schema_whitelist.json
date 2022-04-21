@@ -9,5 +9,18 @@
         "constraint": {
             "PRIMARY": true
         }
+    },
+    "teja_form_blog": {
+        "column": {
+            "id": true,
+            "name": true,
+            "email": true,
+            "telephone": true,
+            "comment": true,
+            "created_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
     }
 }

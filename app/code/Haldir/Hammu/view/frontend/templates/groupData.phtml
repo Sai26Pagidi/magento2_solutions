@@ -1,15 +1,18 @@
 <?php $articleCollection = $block->getCollection(); ?>
-<?php if (count($articleCollection)) { ?>
+<?php if (isset($articleCollection)) { ?>
     <div class="table-wrapper orders-history">
     <table class="data table table-order-items history" id="my-orders-table">
-        <caption class="table-caption"><?php echo __('Teja Blog') ?></caption>
+        <caption class="table-caption"><?php echo __('Haldir Hammu') ?></caption>
         <thead>
         <tr>
             <th scope="col" class="col id"><?php echo __('ID') ?></th>
             <th scope="col" class="col title"><?php echo __('Title') ?></th>
+            <th scope="col" class="col title"><?php echo __('Name') ?></th>
+            <th scope="col" class="col title"><?php echo __('Telephone') ?></th>
             <th scope="col" class="col description"><?php echo __('Description') ?></th>
             <th scope="col" class="col status"><?php echo __('Status') ?></th>
-            <th scope="col" class="col status"><?php echo __('Action') ?></th>
+            <th scope="col" class="col title"><?php echo __('CreatedAt') ?></th>
+
         </tr>
         </thead>
         <tbody>
@@ -22,14 +25,21 @@
             <td data-th="<?= $block->escapeHtml(__('Title')) ?>" class="col title">
                 <a href="<?php echo $block->getArticleUrl($item->getId());?>"><?php echo $item->getTitle(); ?></a>
             </td>
+            <td data-th="<?= $block->escapeHtml(__('Name')) ?>" class="col name">
+                <?php echo $item->getName() ?>
+            </td>
+             <td data-th="<?= $block->escapeHtml(__('Telephone')) ?>" class="col telephone">
+                <?php echo $item->getTelephone() ?>
+            </td>
             <td data-th="<?= $block->escapeHtml(__('Description')) ?>" class="col description">
                 <?php echo $item->getDescription() ?>
             </td>
+           
             <td data-th="<?= $block->escapeHtml(__('Status')) ?>"
                 class="col status"><?php echo $item->getStatus(); ?></td>
-            <td data-th="<?= $block->escapeHtml(__('Delete')) ?>" class="col title">
-            <a href="<?php echo $block->getDeleteUrl($item->getId());?>"><?php echo 'Delete'; ?></a>
-            </td>
+
+            <td data-th="<?= $block->escapeHtml(__('CreatedAt')) ?>"
+                class="col created_at"><?php echo $item->getCreatedAt(); ?></td>
         </tr>
         <?php endforeach; ?>
         </tbody>

@@ -1,11 +1,12 @@
 <?php
 
-namespace Saiteja\Myownmodule\Controller\Post;
+namespace Teja\Blog\Controller\Index;
 
 use \Magento\Framework\App\Action\HttpGetActionInterface;
+use \Magento\Framework\App\Action\Context;
 use \Magento\Framework\View\Result\PageFactory;
 
-class View implements HttpGetActionInterface 
+class Form implements HttpGetActionInterface 
 {
     /**
      * @var \Magento\Framework\View\Result\PageFactory
@@ -15,7 +16,7 @@ class View implements HttpGetActionInterface
     /**
      * @param PageFactory $resultPageFactory
      */
-    public function __construct(PageFactory $resultPageFactory) {
+    public function __construct(Context $context, PageFactory $resultPageFactory) {
         $this->resultPageFactory = $resultPageFactory;
     }
 
@@ -25,8 +26,6 @@ class View implements HttpGetActionInterface
      */
     public function execute()
     {
-        // echo "Post View text";
-        // exit();
         return $this->resultPageFactory->create();
     }
 }

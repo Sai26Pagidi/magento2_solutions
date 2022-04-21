@@ -9,29 +9,29 @@
                 <argument name="logo_alt" xsi:type="string">Logo sai</argument>
             </arguments>
         </referenceBlock>
-        <referenceBlock name="register-link" remove="true"/>
-        <move element="customer_form_login" destination="customer_form_register" />
+        <!-- <referenceBlock name="register-link" remove="true"/> -->
+        <!-- <move element="customer_form_login" destination="customer_form_register" /> -->
         <move element="search-term-popular-link" destination="top.links" />
         <move element="top.search" destination="header-wrapper" before="-"/>
-        <move element="catalog.topnav" destination="header-wrapper"/>
+        <!-- <move element="catalog.topnav" destination="header-wrapper"/> -->
         <move element="form.subscribe" destination="footer-container" before="-"/>
         <!--Cms page in the menu-->
-         <referenceBlock name="catalog.topnav">
+        <!--  <referenceBlock name="catalog.topnav">
             <block class="Magento\Framework\View\Element\Html\Link\Current" 
                       name="contact-us-link_cm">
                 <arguments>
                     <argument name="label" xsi:type="string" translate="true">Contact</argument>
                     <argument name="path" xsi:type="string">contact</argument>
                 </arguments>
-            </block>
-            <!-- <block class="Magento\Framework\View\Element\Html\Link\Current" 
+            </block> 
+            <block class="Magento\Framework\View\Element\Html\Link\Current" 
                       name="privacy-policy">
                 <arguments>
                     <argument name="label" xsi:type="string" translate="true">Privacy Policy from cms page</argument>
                     <argument name="path" xsi:type="string">privacy-policy-cookie-restriction-mode</argument>
                 </arguments>
-            </block> -->
-        </referenceBlock>
+            </block> 
+        </referenceBlock>-->
         <referenceBlock name="top.links"><!--parent theme is blank so we mention top.links other wise header.links-->
             <block class="Magento\Framework\View\Element\Html\Link\Current" 
                       name="contact-us-link_toplink">

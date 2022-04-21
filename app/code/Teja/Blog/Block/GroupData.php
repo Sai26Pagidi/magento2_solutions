@@ -40,5 +40,9 @@ class GroupData extends Template
         return $this->getUrl('tejablog/index/deletedata/id/'. $tejablog, ['_secure' => true]);
         //return '/blog/index/index/id/' . $blog;
     }
+    public function getFormAction()
+    {
+        return $this->getUrl('tejablog/index/post', ['_secure' => true]);
+    }
 
 }
