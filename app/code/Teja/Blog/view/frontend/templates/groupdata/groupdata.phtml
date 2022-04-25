@@ -1,0 +1,45 @@
+<?php $groupData = $block->getCollection(); 
+ if(count($groupData)) { ?>
+   <div class="table-data">
+        <table class="dispaly-group-data">
+                <caption><?php echo $block->escapeHtml(__('Display Table data of teja_tab</caption')) ?></caption>
+                <thead>
+                    <th><?php echo __('Id')?></th>
+                    <th>Title</th>
+                    <th>Short Description</th>
+                    <th>Status</th>
+                    <th>CreatedAt</th>
+                    <th>UpdatedAt</th>
+                    <th>Delete</th>
+                </thead>
+                <tbody>
+                    <?php foreach ($groupData as $item): ?>
+                        <tr>
+                        <td data-th="<?= $block->escapeHtml(__('ID')) ?>" >
+                              <?php echo $item->getId() ?>
+                         </td>
+                         <td data-th="<?= $block->escapeHtml(__('TITLE')) ?>" >
+                              <a href="<?php echo $block->getTitleUrl($item->getId());?>"><?php echo $item->getTitle() ?></a>
+                         </td>
+                         <td data-th="<?= $block->escapeHtml(__('SHORTDESCRIPTION')) ?>" >
+                             <a href="<?php echo $block->getDescritpionUrl($item->getShortDescription());?>"><?php echo $item->getShortDescription()?></a>
+                         </td>
+                         <td data-th="<?= $block->escapeHtml(__('STATUS')) ?>" >
+                              <?php echo $item->getStatus() ?>
+                         </td>
+                         <td data-th="<?= $block->escapeHtml(__('CREATEDAT')) ?>" >
+                              <?php echo $item->getCreatedAt() ?>
+                         </td>
+                         <td data-th="<?= $block->escapeHtml(__('UPDATEDAT')) ?>" >
+                              <?php echo $item->getUpdatedAt() ?>
+                         </td>
+                         <td data-th="<?= $block->escapeHtml(__('Delete')) ?>" >
+                              <a href="<?php echo $block->getDeleteUrl($item->getId());?>"><?php echo 'Delete'; ?></a>
+                         </td>
+                        </tr>
+                        <?php endforeach; ?>
+                </tbody>
+        </table>
+   </div>
+ <?php }?>
+   

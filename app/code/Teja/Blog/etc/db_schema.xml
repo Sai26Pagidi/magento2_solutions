@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+   <!-- renaming the tablename and adding extra columns and renaming the column name will not work at same time -->
+    <!-- rename tablename using onCreate="migrateDataFromAnotherTable(old_table_name)" -->
+   <table name="teja_tab" onCreate="migrateDataFromAnotherTable(teja_blog)" resource="default" engine="innodb" comment="teja_blog is the table name">
+      <column xsi:type="int" name="id" unsigned="true" nullable="false" identity="true" comment="Id"/>
+	  <!-- change the datatype of title from varchar to text by replacing with text keyword -->
+      <column xsi:type="text" name="title" nullable="false" length="255" comment="Title" />
+	  <!-- raname the column of description to shortDescription using onCreate="migrateDataFrom(old_column_name)" -->
+      <column xsi:type="varchar" name="short_description"  nullable="false" onCreate="migrateDataFrom(description)" length="255" comment="ShortDescrpition" />
+      <column xsi:type="smallint" name="status" nullable="false" comment="Status" />
+	  <!-- adding extra columns -->
+	  <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP"
+     comment="Created At"/>
+     <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP"
+      comment="Updated At"/>
+      <constraint xsi:type="primary" referenceId="PRIMARY"><column name="id" /></constraint>
+   </table>
+</schema>

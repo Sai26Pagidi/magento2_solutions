@@ -1,0 +1,16 @@
+{
+    "teja_tab": {
+        "column": {
+            "id": true,
+            "title": true,
+            "description": true,
+            "status": true,
+            "created_at": true,
+            "updated_at": true,
+            "short_description": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}
