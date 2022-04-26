@@ -12,5 +12,20 @@
         "constraint": {
             "PRIMARY": true
         }
+    },
+    "registration_form": {
+        "column": {
+            "id": true,
+            "name": true,
+            "pwd": true,
+            "cpwd": true,
+            "r1": true,
+            "email": true,
+            "telephone": true,
+            "comment": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
     }
 }

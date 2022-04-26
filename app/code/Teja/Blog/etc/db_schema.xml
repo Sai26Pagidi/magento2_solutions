@@ -5,7 +5,7 @@
    <table name="teja_tab" onCreate="migrateDataFromAnotherTable(teja_blog)" resource="default" engine="innodb" comment="teja_blog is the table name">
       <column xsi:type="int" name="id" unsigned="true" nullable="false" identity="true" comment="Id"/>
 	  <!-- change the datatype of title from varchar to text by replacing with text keyword -->
-      <column xsi:type="text" name="title" nullable="false" length="255" comment="Title" />
+      <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Title" />
 	  <!-- raname the column of description to shortDescription using onCreate="migrateDataFrom(old_column_name)" -->
       <column xsi:type="varchar" name="short_description"  nullable="false" onCreate="migrateDataFrom(description)" length="255" comment="ShortDescrpition" />
       <column xsi:type="smallint" name="status" nullable="false" comment="Status" />
@@ -14,6 +14,18 @@
      comment="Created At"/>
      <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP"
       comment="Updated At"/>
+      <constraint xsi:type="primary" referenceId="PRIMARY"><column name="id" /></constraint>
+   </table>
+   <!--Table for Form data-->
+   <table name="registration_form"  resource="default" engine="innodb" comment="teja_blog is the table name">
+      <column xsi:type="int" name="id" unsigned="true" nullable="false" identity="true" comment="Id"/>
+      <column xsi:type="text" name="name" nullable="false" comment="Name" />
+      <column xsi:type="varchar" name="pwd"  nullable="false"  length="255" comment="Password" />
+      <column xsi:type="varchar" name="cpwd"  nullable="false"  length="255" comment="Confirm Password" />
+      <column xsi:type="varchar" name="r1"  nullable="true"  comment="Gender" />
+      <column xsi:type="varchar" name="email" nullable="false" comment="Email" />
+	  <column xsi:type="varchar" name="telephone"  nullable="false" comment="Telephone"/>
+     <column xsi:type="varchar" name="comment" nullable="false" comment="Comment"/>
       <constraint xsi:type="primary" referenceId="PRIMARY"><column name="id" /></constraint>
    </table>
 </schema>
