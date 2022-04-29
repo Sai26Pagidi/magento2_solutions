@@ -10,3 +10,11 @@
 .footer {
     //background-image: url('../images/Banner1.jpg') !important;
 }
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+.page-footer {
+        .lib-css(background, @footer__background-color);
+        margin-top: auto;
+        padding-bottom: @indent__m;
+    }
+ }

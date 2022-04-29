@@ -26,6 +26,7 @@ class GroupData extends Template
 
     //fetching group of records 
     public function getCollection()
+
     {
         /** @var ViewCollection $viewCollection */
         $blogCollection = $this->_blogCollectionFactory ->create();
