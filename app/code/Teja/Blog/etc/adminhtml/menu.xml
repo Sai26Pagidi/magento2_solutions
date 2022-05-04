@@ -5,13 +5,13 @@
         <!-- this is first heading for job posts and job Candidates -->
         <add id="Teja_Blog::menu_heading" title="Heading1" parent="Teja_Blog::menu" translate="title" module="Teja_Blog" sortOrder="17" resource="Teja_Blog::menu_heading"/>
         <!--if we didn't provide action it just be the heading,,,,so we are providing links for first heading -->
-        <add id="Teja_Blog::submenu_posts" title="Job Posts" translate="title" action="tejablog/index/index" parent="Teja_Blog::menu_heading" module="Teja_Blog" sortOrder="20" resource="Teja_Blog::submenu_posts"/>
+        <add id="Teja_Blog::submenu_posts" title="Job Posts" translate="title" action="blogadmin/create/index" parent="Teja_Blog::menu_heading" module="Teja_Blog" sortOrder="20" resource="Teja_Blog::submenu_posts"/>
         <add id="Teja_Blog::submenu_candidates" title="Job Candidates" action="tejablog/index/index" translate="title" parent="Teja_Blog::menu_heading" module="Teja_Blog" sortOrder="30" resource="Teja_Blog::submenu_candidates"/>
        <!-- if we want to mention heading it should be more than 2 or equal to 2, if there is one heading the heading will not appear -->
         <add id="Teja_Blog::submenu_aadhar" title="Aadhar" translate="title" parent="Teja_Blog::menu" module="Teja_Blog" sortOrder="30" resource="Teja_Blog::submenu_aadhar"/>
         <add id="Teja_Blog::submenu_aadhardetails" action="tejablog/index/index" title="Aadhar Details" translate="title"  parent="Teja_Blog::submenu_aadhar" module="Teja_Blog" sortOrder="40" resource="Teja_Blog::submenu_aadhardetails"/>
         <!-- stores is the heading -->
         <add id="Teja_Blog::submenu_stores" title="Stores" translate="title" parent="Teja_Blog::menu" module="Teja_Blog" sortOrder="30" resource="Teja_Blog::submenu_stores"/>
-        <add id="Teja_Blog::submenu_configuration" title="Configuration" translate="title" parent="Teja_Blog::submenu_stores" module="Teja_Blog" sortOrder="40" resource="Teja_Blog::submenu_configuration"/>
+        <add id="Teja_Blog::submenu_configuration" title="Configuration" action="admin/system_config/index" translate="title" parent="Teja_Blog::submenu_stores" module="Teja_Blog" sortOrder="40" resource="Teja_Blog::submenu_configuration"/>
     </menu>
 </config>
