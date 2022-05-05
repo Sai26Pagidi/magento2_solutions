@@ -24,4 +24,14 @@
          <column name="id" />
       </constraint>
    </table>
+   <!--Table for Job Posts-->
+   <table name="job_posts" resource="default" engine="innodb" comment="job_posts is the table name">
+      <column xsi:type="int" name="job_id" unsigned="true" nullable="false" identity="true" comment="Id"/>
+      <column xsi:type="varchar" name="job_name" nullable="false" length="255" comment="Job Name" />
+      <column xsi:type="varchar" name="job_place"  nullable="false" length="255" comment="Job Area" />
+      <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" comment="Created At"/>
+      <constraint xsi:type="primary" referenceId="PRIMARY">
+         <column name="job_id" />
+      </constraint>
+   </table>
 </schema>

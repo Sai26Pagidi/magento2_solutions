@@ -7,4 +7,18 @@
     <type name="Teja\Blog\Controller\Index\TestPlugin">
        <plugin name="test_plugin_unique_name" type="Teja\Blog\Plugin\TestSai" sortOrder="10" disabled="false"/>
    </type>
+   <!-- for listing component -->
+   <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="job_listing_data_source" xsi:type="string">Teja\Blog\Model\ResourceModel\JobPosts\JobPosts\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Teja\Blog\Model\ResourceModel\JobPosts\JobPosts\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">job_posts</argument>
+            <argument name="resourceModel" xsi:type="string">Teja\Blog\Model\ResourceModel\JobPosts</argument>
+        </arguments>
+    </virtualType>
 </config>
