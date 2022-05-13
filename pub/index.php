@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Public alias for the application entry point
  *
@@ -22,8 +23,32 @@ try {
 HTML;
     exit(1);
 }
-
-$bootstrap = Bootstrap::create(BP, $_SERVER);
+$params = $_SERVER;
+$domainName = $_SERVER['SERVER_NAME'];
+switch ($domainName) {
+    case 'sai.beauty.com':
+        $runType = 'store';
+        $runCode = 'beauty_store_view';
+        break;
+    case 'sai.beauty.com':
+        $runType = 'store';
+        $runCode = 'french_store_view';
+        break;
+    case 'sai.beauty.com':
+        $runType = 'store';
+        $runCode = 'german_beauty_store';
+        break;
+    case 'sai.grocery.com':
+        $runType = 'website';
+        $runCode = 'grocery';
+        break;
+    default:
+        $runType = 'website';
+        $runCode = 'base';
+}
+$params[\Magento\Store\Model\StoreManager::PARAM_RUN_CODE] = $runCode;
+$params[\Magento\Store\Model\StoreManager::PARAM_RUN_TYPE] = $runType;
+$bootstrap = Bootstrap::create(BP, $params);
 /** @var \Magento\Framework\App\Http $app */
 $app = $bootstrap->createApplication(\Magento\Framework\App\Http::class);
 $bootstrap->run($app);

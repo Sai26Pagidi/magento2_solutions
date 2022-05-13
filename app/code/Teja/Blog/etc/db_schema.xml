@@ -33,5 +33,10 @@
       <constraint xsi:type="primary" referenceId="PRIMARY">
          <column name="job_id" />
       </constraint>
+      <!-- this allows to search in search box -->
+      <!-- <index referenceId="Teja_Blog_JOB_NA" indexType="btree"><column name="job_name"/>
+	    </index>
+        <index referenceId="Teja_Blog_JOB_PLA" indexType="btree"><column name="job_place"/>
+	    </index> -->
    </table>
 </schema>
