@@ -4,7 +4,8 @@
        <item name="js_config" xsi:type="array">
            <item name="provider" xsi:type="string">job_listing_editForm.job_listing_editForm_data_source</item></item>
            <item name="label" xsi:type="string" translate="true">General Information</item>
-           <item name="template" xsi:type="string">templates/form/collapsible</item>
+           <!-- <item name="template" xsi:type="string">templates/form/collapsible</item> -->
+           <!-- if we uncomment line no-7 the page will load continuously after adding tabs section layout to display tabs we need add admin-2colums-left in blogadmin_create_edit.xml -->
            </argument>
               <settings>
                  <!-- <buttons>
@@ -17,6 +18,12 @@
                  <buttons>
                     <button name="save" class="Teja\Blog\Block\Adminhtml\Create\Edit\SaveButton"/>
                  </buttons>
+                 <!-- the functionality for this is added in line no-36 magento_ui -->
+                 <!-- this is for sidebar menu/tabs by commenting line no-7 in this layout-->
+                     <layout>
+                         <navContainerName>left</navContainerName>
+                         <type>tabs</type>
+                   </layout>
                  <namespace>job_listing_editForm</namespace>
                  <dataScope>data</dataScope>
                  <deps>
@@ -39,9 +46,12 @@
              </settings>
        </dataProvider>
        </dataSource>
+       <!-- this must be unique name -->
        <fieldset name="general">
            <settings>
               <label>General</label>
+              <!-- this is for dropdown collapsing true/false General section line no-7 helping us -->
+              <collapsible>false</collapsible>
            </settings>
            <field name="job_name" formElement="input" sortOrder="10">
              <argument name="data" xsi:type="array">
@@ -161,5 +171,58 @@
 </checkbox>
 </formElements>
 </field> -->
+</fieldset>
+<!-- unique name -->
+ <fieldset name="details">
+           <settings>
+              <label>Details About Job</label>
+              <!-- this is for dropdown collapsing true/false details section -->
+              <collapsible>false</collapsible>
+           </settings>
+           <field name="job_name" formElement="input" sortOrder="10">
+             <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                  <item name="source" xsi:type="string">Customform</item>
+               </item>
+             </argument>
+             <settings>
+               <dataType>text</dataType>
+               <label translate="true">Job Name</label>
+              <dataScope>job_name</dataScope>
+              <validation>
+                <rule name="required-entry" xsi:type="boolean">true</rule>
+              </validation>
+            </settings>
+          </field>
+          <field name="job_place" formElement="textarea" sortOrder="20">
+              <argument name="data" xsi:type="array">
+                 <item name="config" xsi:type="array">
+                   <item name="source" xsi:type="string">Customform</item>
+                 </item>
+              </argument>
+             <settings>
+             <dataType>text</dataType>
+             <label translate="true">Job Place</label>
+             <dataScope>job_place</dataScope>
+             <validation>
+               <rule name="required-entry" xsi:type="boolean">true</rule>
+             </validation>
+            </settings>
+         </field>
+          <field name="created_at" formElement="date" sortOrder="30">
+            <argument name="data" xsi:type="array">
+                 <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">Customform</item>
+                </item>
+           </argument>
+           <settings>
+              <dataType>date</dataType>
+              <label translate="true">Created At</label>
+              <dataScope>created_at</dataScope>
+               <validation>
+                <rule name="required-entry" xsi:type="boolean">true</rule>
+              </validation>
+          </settings>
+         </field> 
 </fieldset>
 </form>
