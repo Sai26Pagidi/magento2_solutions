@@ -34,6 +34,54 @@
         </argument>
     </dataSource>
     <listingToolbar>
+    <massaction name="listing_massaction">
+<argument name="data" xsi:type="array">
+<item name="config" xsi:type="array">
+<!-- we have to mention the selection ids here -->
+<item name="selectProvider" xsi:type="string">job_listing.job_listing.load_data_records.ids</item>
+<item name="indexField" xsi:type="string">job_id</item>
+</item>
+</argument>
+<action name="delete">
+<argument name="data" xsi:type="array">
+<item name="config" xsi:type="array">
+<item name="type" xsi:type="string">delete</item>
+<item name="label" xsi:type="string" translate="true">Delete</item>
+<item name="url" xsi:type="url" path="blogadmin/create/massDelete"/>
+<item name="confirm" xsi:type="array">
+<item name="name" xsi:type="string" translate="true">Delete items</item>
+<item name="message" xsi:type="string" translate="true">Are you sure you wan't to delete selected items?</item>
+</item>
+</item>
+</argument>
+</action> 
+<action name="edit">
+<argument name="data" xsi:type="array">
+<item name="config" xsi:type="array">
+<item name="type" xsi:type="string">edit</item>
+<item name="label" xsi:type="string" translate="true">Edit</item>
+<item name="callback" xsi:type="array">
+<item name="provider" xsi:type="string">job_listing.job_listing.load_data_records_editor</item>
+<item name="target" xsi:type="string">editSelected</item>
+</item>
+</item>
+</argument>
+</action>
+<!-- <action name="disable">
+<settings>
+<url path="blogadmin/create/massDisable"/>
+<type>disable</type>
+<label translate="true">Disable</label>
+</settings>
+</action>
+<action name="enable">
+<settings>
+<url path="blogadmin/create/massEnable"/>
+<type>enable</type>
+<label translate="true">Enable</label>
+</settings>
+</action>  -->
+</massaction>
      <!-- displaying bookmark DefaultView -->
     <bookmark name="bookmarks"/>
     <!-- displaying filter component -->
@@ -103,6 +151,22 @@
                <item name="config" xsi:type="array">
                    <item name="filter" xsi:type="string">textRange</item>
                    <item name="label" xsi:type="string" translate="true">Created At</item>
+               </item>
+           </argument>
+       </column>
+       <column name="customer_name">
+           <argument name="data" xsi:type="array">
+               <item name="config" xsi:type="array">
+                   <item name="filter" xsi:type="string">textRange</item>
+                   <item name="label" xsi:type="string" translate="true">Customer Name</item>
+               </item>
+           </argument>
+       </column>
+       <column name="customer_email">
+           <argument name="data" xsi:type="array">
+               <item name="config" xsi:type="array">
+                   <item name="filter" xsi:type="string">textRange</item>
+                   <item name="label" xsi:type="string" translate="true">Customer Email</item>
                </item>
            </argument>
        </column>

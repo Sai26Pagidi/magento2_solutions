@@ -15,10 +15,14 @@
             </argument>
         </arguments>
     </type>
-    <virtualType name="Teja\Blog\Model\ResourceModel\JobPosts\JobPosts\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+    <!-- for multijoining we need to change virtualtype to type and create the file -->
+    <!--we don't need to use this because we mentioned in jobposts/jobposts/collection.php in model type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult" -->
+    <type name="Teja\Blog\Model\ResourceModel\JobPosts\JobPosts\Collection">
         <arguments>
             <argument name="mainTable" xsi:type="string">job_posts</argument>
+            <argument name="eventPrefix" xsi:type="string">teja_blog_jobposts_jobposts_collection</argument>
+            <argument name="eventObject" xsi:type="string">teja_blog_jobposts_collection</argument>
             <argument name="resourceModel" xsi:type="string">Teja\Blog\Model\ResourceModel\JobPosts</argument>
         </arguments>
-    </virtualType>
+    </type>
 </config>
