@@ -1,0 +1,9 @@
+type Query {
+    getCust (
+    email: String
+    ): getCustomerDetails @resolver(class:"Customers\\CustomCustomerAttribute\\Model\\Resolver\\GetMobileNumber")
+}
+type getCustomerDetails {
+    
+    mobile_number: String
+}
