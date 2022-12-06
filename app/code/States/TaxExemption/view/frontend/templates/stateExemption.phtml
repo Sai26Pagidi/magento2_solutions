@@ -1,0 +1,17 @@
+<h2>UPLOAD YOUR TAX EXEMPT FORM</h2>
+<div class="block state-options" style="width: 50%;">
+    <label for="state">Please Select Your State</label>
+    <div id="state"><?= $block->getStates(); ?></div>
+    <p>*We only collect taxes in the states listed in the dropdown</p>
+    <label for="myfile">Choose a File</label>
+    <div><input type="file" id="myfile" name="myfile" accept="application/pdf" multiple></div>
+    <p>*Accepted file types:.pdf </p>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <input type="hidden" name="hideit" id="hideit" value="" />
+            <button type="submit" title="<?php /* @escapeNotVerified */ echo __('Submit') ?>" class="action submit primary">
+                <span><?php /* @escapeNotVerified */ echo __('SEND MESSAGE') ?></span>
+            </button>
+        </div>
+    </div>
+</div>
