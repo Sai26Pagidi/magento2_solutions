@@ -1,0 +1,14 @@
+<div class="note"> 
+   <a class="action popup-open" href="#"> 
+       <span><?php echo __('Please, click to open popup') ?></span> 
+   </a> 
+</div> 
+<?php echo $this->getChildHtml('popup') ?> 
+<!-- this is where we add the content template of the popup -->
+<script type="text/x-magento-init"> 
+{ 
+   ".popup-open": { 
+       "Customers_CustomCustomerAttribute/js/popup": {} 
+   } 
+} 
+</script>
